@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -16,7 +17,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-     Button save;
+    private static final int MAX_LENGTH_NAME = 20;
+    private static final int MAX_LENGTH_QUOTE = 250;
+    Button save;
      LinearLayout parent_view;
      EditText quote, name;
 
@@ -29,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         quote = findViewById(R.id.quote);
         name = findViewById(R.id.name);
         parent_view = findViewById(R.id.parent_view);
+
+        name.setFilters(new InputFilter[]{new InputFilter.LengthFilter(MAX_LENGTH_NAME)});
+        quote.setFilters(new InputFilter[]{new InputFilter.LengthFilter(MAX_LENGTH_QUOTE)});
+
 
         hideKeyboard();
 
