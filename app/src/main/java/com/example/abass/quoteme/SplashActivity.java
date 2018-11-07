@@ -16,6 +16,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 nextActivity();
+                finish();
             }
         };
 

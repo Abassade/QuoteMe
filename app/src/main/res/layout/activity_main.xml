@@ -52,7 +52,7 @@
         android:layout_gravity="center"
         android:background="@drawable/logo_back"
         android:id="@+id/save"
-        android:text="Save"
+        android:text="Quote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
