@@ -33,6 +33,7 @@ public class QuoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quote);
+        getSupportActionBar().setTitle("Quote Summary");
 
         quote_edt = findViewById(R.id.quote);
         name_edt = findViewById(R.id.name);
@@ -111,7 +112,7 @@ public class QuoteActivity extends AppCompatActivity {
         return rootView.getDrawingCache();
     }
 
-    private void shareImage(Bitmap bitmap){
+    private Boolean shareImage(Bitmap bitmap){
         // save bitmap to cache directory
         try {
             File cachePath = new File(this.getCacheDir(), "images");
@@ -136,5 +137,6 @@ public class QuoteActivity extends AppCompatActivity {
             shareIntent.setType("image/png");
             startActivity(Intent.createChooser(shareIntent, "Choose an app"));
         }
+        return true;
     }
 }
